@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 
 :root {
+
   --color-primary: #D2691E;      
   --color-secondary: #8B4513;    
   --color-accent: #DAA520;       
@@ -13,13 +15,11 @@
   --gray-300: #D1D5DB;
   --gray-400: #9CA3AF;
   --gray-500: #6B7280;
-  --gray-600: #4B5563;
+  --gray-600: #464f5c;
   --gray-700: #374151;
   --gray-800: #1F2937;
   --gray-900: #111827;
-  
-  --font-heading: "DM Sans", sans-serif;
-  --font-body: "PT Serif", serif;
+
 }
 
 /* === BASE STYLES === */
@@ -29,29 +29,19 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--gray-800);
-  background-color: var(--gray-100);
+body {  font-family: 'Lustria', serif;
+}
+
+li {
+  font-family: 'Lustria', serif;
 }
 
 p {
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--gray-800);
-  margin-bottom: 1rem;
+    font-family: 'Lustria', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
- 
+    font-family: 'Lustria', serif;
 }
 
 h1 {
@@ -61,7 +51,6 @@ height: 112px;
 color: #000;
 
 text-align: center;
-font-family: Lustria;
 font-size: 35px;
 font-style: normal;
 font-weight: 400;
@@ -253,5 +242,20 @@ main.photo-grid .photo-caption {
   main.medium-style p {
     font-size: 1rem;
   }
-}
 
+
+
+}
+:root {
+--baseFontSize: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
+
+ --type-scale: 1.5;
+
+ --xlText: calc(var(--lgText) * var(--type-scale));
+ --lgText: calc(var(--mdText) * var(--type-scale));
+ --mdText: calc(var(--baseText) * var(--type-scale));
+ --xsText: calc(var(--smText) / var(--type-scale));
+ --smText: calc(var(--baseText) / var(--type-scale));
+ --baseText: var(--baseFontSize);
+
+  --font-body: 'Lustria', serif;}
