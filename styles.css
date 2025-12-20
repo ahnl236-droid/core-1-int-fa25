@@ -923,6 +923,7 @@ transition: background-color 0.25s ease, color 0.25s ease;
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
   gap: var(--space-md);
+  border-left: 1px solid var(--dark-line);
 }
 
 /* LEFT COLUMN — TEXT */
@@ -1018,4 +1019,14 @@ transition: background-color 0.25s ease, color 0.25s ease;
   .app-fig--medium {
     height: auto;
   }
+}
+.app-page::before {
+  content: "";
+  position: absolute;
+  left: calc(8.333% * 1); /* aligns to column 2 */
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--dark-line);
+  pointer-events: none;
 }
