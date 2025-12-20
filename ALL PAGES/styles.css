@@ -1,261 +1,124 @@
-
-
-
+@import url('fonts.googleapis.com');
 :root {
-
-  --color-primary: #D2691E;      
-  --color-secondary: #8B4513;    
-  --color-accent: #DAA520;       
-  --color-tertiary: #A0522D;
-  --color-highlight: #CD853F;    
-  
-  --gray-50: #F9FAFB;
-  --gray-100: #F3F4F6;
-  --gray-200: #E5E7EB;
-  --gray-300: #D1D5DB;
-  --gray-400: #9CA3AF;
-  --gray-500: #6B7280;
-  --gray-600: #464f5c;
-  --gray-700: #374151;
-  --gray-800: #1F2937;
-  --gray-900: #111827;
-
+  --cream: #fbf8ee;
+  --light-beige: #ede9d2;
+  --beige: #dfd7b9;
+  --dark-line: #b9b9b9;
+  --text-dark: #1f1f1f;
 }
 
-/* === BASE STYLES === */
-* {
+
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background-color: var(--cream);
+  color: var(--text-dark);
 }
 
-body {  font-family: 'Lustria', serif;
+
+.site-header {
+  border-bottom: 1px solid var(--dark-line);
+  padding: 18px 40px;
+  font-family: 'Puritan', sans-serif;
+  font-size: 15px;
 }
 
-li {
-  font-family: 'Lustria', serif;
-}
 
-p {
-    font-family: 'Lustria', serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lustria', serif;
-}
-
-h1 {
-  font-size: 2.5rem;
-  width: 462px;
-height: 112px;
-color: #000;
-
-text-align: center;
-font-size: 35px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
-}
-
-/* === DEFAULT LAYOUT === */
-main {
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 60vw;
-}
-
-section {
-  background-color: white;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* === TWO COLUMN LAYOUT === */
-main.two-column {
+.grid-page {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1200px;
-}
-
-main.two-column section {
-  margin-bottom: 0;
-}
-
-/* === THREE COLUMN LAYOUT === */
-main.three-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, minmax(90px, auto));
+  gap: 0;
   max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  border-left: 1px solid var(--dark-line);
 }
 
-main.three-column section {
-  margin-bottom: 0;
+
+.hero-title {
+  grid-column: 2 / 9;
+  grid-row: 1 / 4;
+  font-family: 'Lustria', serif;
+  font-size: 64px;
+  line-height: 1.15;
+  font-weight: normal;
+  margin: 60px 0 0 0;
 }
 
-main.three-column h1,
-main.three-column h2,
-main.three-column h3 {
-  color: var(--color-secondary);
+
+
+.tile {
+  font-family: 'Lustria', serif;
+  font-size: 18px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.3;
 }
 
-/* === MEDIUM STYLE LAYOUT === */
-main.medium-style {
-  display: block;
-  max-width: 680px;
-  padding: 3rem 2rem;
+
+.anatomy {
+  grid-column: 2 / 5;
+  grid-row: 3 / 5;
+  background-color: var(--light-beige);
 }
 
-main.medium-style section {
-  padding: 0;
-  margin-bottom: 3rem;
+.history {
+  grid-column: 2 / 5;
+  grid-row: 5 / 8;
+  background-color: var(--beige);
 }
 
-body:has(main.medium-style) {
-  background-color: white;
-  line-height: 1.8;
-  color: var(--gray-900);
+.concentration {
+  grid-column: 5 / 8;
+  grid-row: 4 / 6;
+  background-color: var(--beige);
+  align-items: center;
 }
 
-main.medium-style p {
-  line-height: 1.8;
-  color: var(--gray-900);
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+.application {
+  grid-column: 5 / 8;
+  grid-row: 6 / 8;
+  background-color: var(--cream);
+  align-items: center;
 }
 
-main.medium-style h1 {
-  font-size: 2.75rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+.formulation {
+  grid-column: 8 / 11;
+  grid-row: 4 / 6;
+  background-color: var(--light-beige);
+  align-items: center;
 }
 
-main.medium-style h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+.ingredients {
+  grid-column: 8 / 11;
+  grid-row: 6 / 8;
+  background-color: var(--beige);
+  align-items: center;
 }
 
-main.medium-style img {
-  margin: 2rem 0;
-}
-
-/* === PHOTO GRID LAYOUT === */
-main.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-}
-
-main.photo-grid .photo-item {
-  background-color: white;
-  padding: 1.5rem;
+.scent {
+  grid-column: 11 / 13;
+  grid-row: 2 / 5;
+  background-color: var(--beige);
+  align-items: center;
   text-align: center;
 }
 
-main.photo-grid .photo-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  margin: 0 0 1rem 0;
+.global {
+  grid-column: 11 / 13;
+  grid-row: 7 / 9;
+  background-color: var(--cream);
+  align-items: center;
+  text-align: center;
 }
 
-main.photo-grid .photo-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+.grid-page::before {
+  content: "";
+  position: absolute;
+  left: calc(8.333% * 1);
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--dark-line);
 }
-
-main.photo-grid .photo-caption {
-  font-family: var(--font-body);
-  font-weight: 400;
-  color: var(--gray-700);
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* === RESPONSIVE BREAKPOINTS === */
-
-/* Three column to two column on tablets */
-@media (max-width: 1024px) {
-  main.three-column {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  main.photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Two and three column to single column on mobile */
-@media (max-width: 768px) {
-  main.two-column {
-    grid-template-columns: 1fr;
-  }
-  
-  main.two-column section {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  main.three-column {
-    grid-template-columns: 1fr;
-  }
-  
-  main.three-column section {
-    margin-bottom: 2rem;
-  }
-  
-  main.medium-style {
-    padding: 2rem 1.5rem;
-  }
-  
-  main.medium-style h1 {
-    font-size: 2rem;
-  }
-  
-  main.medium-style h2 {
-    font-size: 1.75rem;
-  }
-  
-  main.medium-style p {
-    font-size: 1rem;
-  }
-
-
-
-}
-:root {
---baseFontSize: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-
- --type-scale: 1.5;
-
- --xlText: calc(var(--lgText) * var(--type-scale));
- --lgText: calc(var(--mdText) * var(--type-scale));
- --mdText: calc(var(--baseText) * var(--type-scale));
- --xsText: calc(var(--smText) / var(--type-scale));
- --smText: calc(var(--baseText) / var(--type-scale));
- --baseText: var(--baseFontSize);
-
-  --font-body: 'Lustria', serif;}
