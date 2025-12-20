@@ -913,3 +913,109 @@ transition: background-color 0.25s ease, color 0.25s ease;
     border-bottom: 1px solid var(--dark-line);
   }
 }
+/* =========================
+   APPLICATION PAGE
+   ========================= */
+
+/* Page layout */
+.app-page {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  gap: var(--space-md);
+}
+
+/* LEFT COLUMN — TEXT */
+.app-article {
+  grid-column: 2 / 7;
+  max-width: 560px;
+}
+
+.app-title {
+  font-family: "Lustria", serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.app-kicker {
+  font-family: "Puritan", sans-serif;
+  font-size: var(--type-sm);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.app-body {
+  font-family: "Puritan", sans-serif;
+  font-size: var(--type-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.app-subhead {
+  font-family: "Puritan", sans-serif;
+  font-size: var(--type-sm);
+  font-weight: 700;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+/* List styling */
+.app-body ul,
+.app-article ul {
+  padding-left: 1.1em;
+}
+
+.app-article li {
+  margin-bottom: 6px;
+}
+
+/* RIGHT COLUMN — IMAGES */
+.app-visual {
+  grid-column: 8 / 12;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: var(--space-sm);
+}
+
+/* Figures */
+.app-fig {
+  overflow: hidden;
+  background-color: var(--light-beige);
+}
+
+.app-fig img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Image sizing to match mockup */
+.app-fig--large {
+  height: 320px;
+}
+
+.app-fig--medium {
+  height: 200px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .app-article {
+    grid-column: 2 / -2;
+  }
+
+  .app-visual {
+    grid-column: 2 / -2;
+    grid-template-rows: auto;
+  }
+
+  .app-fig--large,
+  .app-fig--medium {
+    height: auto;
+  }
+}
