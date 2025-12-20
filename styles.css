@@ -144,11 +144,12 @@
 .grid-page::before {
   content: "";
   position: absolute;
-  left: calc(8.333% * 1);
+  left: calc(8.333% * 1); /* aligns to column 2 */
   top: 0;
   height: 100%;
   width: 1px;
   background-color: var(--dark-line);
+  pointer-events: none;
 }
 
 
@@ -922,8 +923,11 @@ transition: background-color 0.25s ease, color 0.25s ease;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
+  padding-left: var(--space-sm);
   gap: var(--space-md);
   border-left: 1px solid var(--dark-line);
+  position: relative;
+  min-height: 100vh;
 }
 
 /* LEFT COLUMN — TEXT */
